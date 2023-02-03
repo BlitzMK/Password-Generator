@@ -9,19 +9,24 @@ def generatePassword(par):
     special = params['spChar']
     num = params['num']
 
-    password = ""
+    password = random.choice(string.ascii_lowercase)
 
     # list of characters
     choices = string.ascii_lowercase
 
     if cap:
         choices += string.ascii_uppercase
+        password += random.choice(string.ascii_uppercase)
     if special:
         choices += string.punctuation
+        password += random.choice(string.punctuation)
     if num:
         choices += string.digits
+        password += random.choice(string.digits)
 
-    for x in range(length):    
+    #generage and verify
+    while len(password) < length:
         password += random.choice(choices)
 
-    return password
+    return ''.join(random.sample(password,len(password)))
+
