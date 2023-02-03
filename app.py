@@ -7,9 +7,9 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         param = {
-            "len": request.form["length"],
-            "upper": request.form.get('uppercase'),
-            "spChar": request.form.get('specialChar')
+            "len": request.form.get("length",type=int),
+            "upper": request.form.get("upperCase", type=bool),
+            "spChar": request.form.get("specialChar", type=bool)
         }
         return redirect(url_for("generatedPassword", par = param))
     else:
