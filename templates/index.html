@@ -6,10 +6,13 @@
 
 {% block body %}
 <form action="#" method="post">
-    <p>Name:</p>
-    <p><input type="text" name="nm" /></p>
+    <p>Enter information about the password you would like to generate: </p>
+    <label for="length">Length:</label>
+    <p><input type="number" name="length" /></p>
+    <input type="checkbox" name="uppercase" value="Uppercase Included">
+    <label for="uppercase">Uppercase Included</label><br>
+    <input type="checkbox" name="specialChar" value="Special Characters Included">
+    <label for="specialChar">Special Characters Included</label><br>
     <p><input type="submit" value="submit" /></p>
-
-
 </form>
 {% endblock %}
