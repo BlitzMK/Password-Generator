@@ -9,7 +9,8 @@ def index():
         param = {
             "len": request.form.get("length",type=int),
             "upper": request.form.get("upperCase", type=bool),
-            "spChar": request.form.get("specialChar", type=bool)
+            "spChar": request.form.get("specialChar", type=bool),
+            "num":request.form.get("num",type=bool)
         }
         return redirect(url_for("generatedPassword", par = param))
     else:
